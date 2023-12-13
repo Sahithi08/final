@@ -1,0 +1,26 @@
+info: [Success] Retrieved all rooms successfully {"timestamp":"2023-12-13T23:08:51.355Z"}
+info: [Success] Retrieved room by ID successfully - Room ID: 64ff0da07dfd7285a698b691 {"timestamp":"2023-12-13T23:09:04.282Z"}
+info: [Success] User registered successfully - Name: 1, Email: 1 {"timestamp":"2023-12-13T23:09:17.329Z"}
+info: [Success] User login successful - Name: 1, Email: 1 {"timestamp":"2023-12-13T23:09:24.117Z"}
+error: [Failure] User login failed - Invalid credentials {"timestamp":"2023-12-13T23:09:34.314Z"}
+error: [Failure] User login failed - Invalid credentials {"timestamp":"2023-12-13T23:11:21.512Z"}
+error: [Failure] User login failed - Invalid credentials {"timestamp":"2023-12-13T23:11:25.638Z"}
+info: [Success] User login successful - Name: 2, Email: 2 {"timestamp":"2023-12-13T23:11:32.178Z"}
+info: [Success] Retrieved all rooms successfully {"timestamp":"2023-12-13T23:11:35.783Z"}
+info: [Success] Retrieved room by ID successfully - Room ID: 64ff0da07dfd7285a698b691 {"timestamp":"2023-12-13T23:11:40.986Z"}
+info: [Success] Retrieved all rooms successfully {"timestamp":"2023-12-13T23:12:08.636Z"}
+info: [Success] Retrieved room by ID successfully - Room ID: 64ff0da07dfd7285a698b694 {"timestamp":"2023-12-13T23:16:32.857Z"}
+info: [Success] Retrieved all rooms successfully {"timestamp":"2023-12-13T23:16:34.749Z"}
+info: [Success] Retrieved room by ID successfully - Room ID: 64ff0da07dfd7285a698b694 {"timestamp":"2023-12-13T23:16:35.702Z"}
+info: [Success] Retrieved all rooms successfully {"timestamp":"2023-12-13T23:16:36.448Z"}
+info: [Success] Retrieved room by ID successfully - Room ID: 64ff0da07dfd7285a698b694 {"timestamp":"2023-12-13T23:16:36.989Z"}
+info: [Success] Retrieved all rooms successfully {"timestamp":"2023-12-13T23:16:38.143Z"}
+info: [Success] Retrieved all rooms successfully {"timestamp":"2023-12-13T23:16:43.584Z"}
+info: [Success] User registered successfully - Name: 1, Email: 2 {"timestamp":"2023-12-13T23:16:56.378Z"}
+info: [Success] User registered successfully - Name: 2, Email: 2 {"timestamp":"2023-12-13T23:17:12.663Z"}
+info: [Success] User registered successfully - Name: 2, Email: 2 {"timestamp":"2023-12-13T23:17:18.594Z"}
+info: [Success] User login successful - Name: 2, Email: 2 {"timestamp":"2023-12-13T23:17:25.149Z"}
+info: [Success] Retrieved all rooms successfully {"timestamp":"2023-12-13T23:17:27.600Z"}
+info: [Success] Retrieved room by ID successfully - Room ID: 64ff0da07dfd7285a698b691 {"timestamp":"2023-12-13T23:17:36.141Z"}
+info: [Success] Retrieved all rooms successfully {"timestamp":"2023-12-13T23:17:44.087Z"}
+
