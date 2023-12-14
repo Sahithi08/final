@@ -16,7 +16,23 @@ router.post("/register", async (req, res) => {
     return res.status(400).json({ message: error });
   }
 });
+router.put("/makeAdmin", async (req, res) => {
+  const { id } = req.body;
+  // const newUser = new User({ name, email, password });
 
+  try {
+    const user = await User.findOne({_id :id});
+    user.isAdmin = true;
+    user.save();
+    const user2 = await User.findOne({_id :id});
+    console.log(user2);
+    logger.info(`[Success] This user is now an admin ${id}`);
+    res.send('User is now an admin');
+  } catch (error) {
+    logger.error(`[Error] Make user admin failed - ${error.message}`);
+    return res.status(400).json({ message: error });
+  }
+});
 router.post("/login", async (req, res) => {
   const { email, password } = req.body;
 

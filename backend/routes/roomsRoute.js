@@ -49,5 +49,27 @@ router.post("/addroom", async (req, res) => {
     return res.status(400).json({ error });
   }
 });
+router.delete("/delroom", async (req, res) => {
+  const { room, rentperday, maxcount, description, phonenumber, type, image1, image2, image3 } = req.body;
 
+  const newroom = new Room({
+    name: room,
+    rentperday,
+    maxcount,
+    description,
+    phonenumber,
+    type,
+    imageurls: [image1, image2, image3],
+    currentbookings: []
+  });
+
+  try {
+    await newroom.save();
+    logger.info(`[Success] New room added successfully - Room Name: ${room}`);
+    res.send('New Room Added Successfully');
+  } catch (error) {
+    logger.error(`[Error] Failed to add new room - ${error.message}`);
+    return res.status(400).json({ error });
+  }
+});
 module.exports = router;

@@ -14,23 +14,23 @@ router.post("/bookroom", async (req, res) => {
   const { room, fromdate, todate, totalDays, totalAmount, user , token } = req.body;
 
   try {
-    const customer = await stripe.customers.create({
-      email: token.email,
-      source: token.id,
-    });
+    // const customer = await stripe.customers.create({
+    //   email: token.email,
+    //   source: token.id,
+    // });
 
-    const payment = await stripe.charges.create(
-      {
-        amount: totalAmount * 100,
-        currency: "inr",
-        customer: customer.id,
-        receipt_email: token.email,
-      },
-      {
-        idempotencyKey: uuidv4(),
-      }
-    );
-
+    // const payment = await stripe.charges.create(
+    //   {
+    //     amount: totalAmount * 1,
+    //     currency: "inr",
+    //     customer: customer.id,
+    //     receipt_email: token.email,
+    //   },
+    //   {
+    //     idempotencyKey: uuidv4(),
+    //   }
+    // );
+    const payment = true;
     if (payment) {
       try {
         const newbooking = new Booking({
@@ -75,21 +75,43 @@ router.post("/bookroom", async (req, res) => {
   }
 });
 
-router.post("/cancelbooking", async (req, res) => {
-  const {bookingid, roomid } = req.body;
+// router.post("/cancelbooking", async (req, res) => {
+//   const {bookingid, roomid } = req.body;
 
+//   try {
+//     const bookingitem = await Booking.findOne({ _id: bookingid });
+//     bookingitem.status = 'cancelled';
+
+//     await bookingitem.save();
+    
+//     const room = await Room.findOne({ _id: roomid });
+//     const bookings = room.currentbookings;
+//     const temp = bookings.filter(booking => booking.bookingid.toString() !== bookingid);
+//     console.log(temp);
+//     room.currentbookings = temp;
+//     await room.save();
+
+//     logger.info(`[Success] Booking cancelled successfully - Booking ID: ${bookingid}`);
+//     res.send('Booking deleted successfully');
+//   } catch (error) {
+//     logger.error(`[Error] Booking cancellation failed - ${error.message}`);
+//     console.log(error);
+//     return res.status(400).json({ message: "something went wrong" });
+//   }
+// });
+
+router.delete(`/cancelbooking/:bookingid/:roomid`, async (req, res) => {
+  // const {bookingid, roomid } = req.body.bookingid;
+  const bookingid = req.params.bookingid;
+  const roomid = req.params.roomid;
+  console.log(bookingid)
   try {
-    const bookingitem = await Booking.findOne({ _id: bookingid });
-    bookingitem.status = 'cancelled';
-    await bookingitem.save();
-
-    const room = await Room.findOne({ _id: roomid });
-    const bookings = room.currentbookings;
-    const temp = bookings.filter(booking => booking.bookingid.toString() !== bookingid);
-    console.log(temp);
-    room.currentbookings = temp;
-    await room.save();
-
+    const deletedBooking = await Booking.findOneAndDelete({ _id: bookingid,roomid : roomid });
+    // console.log(booking)
+    if (!deletedBooking) {
+      logger.error(`[Failure] Booking not found - Booking ID: ${bookingid}`);
+      return res.status(404).json({ message: "Booking not found" });
+    }
     logger.info(`[Success] Booking cancelled successfully - Booking ID: ${bookingid}`);
     res.send('Booking deleted successfully');
   } catch (error) {

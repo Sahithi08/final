@@ -7,8 +7,26 @@ import Loader from "../components/Loader";
 import Success from "../components/Success";
 import { Tag, Divider } from 'antd';
 const { TabPane } = Tabs;
-
 const user = JSON.parse(localStorage.getItem('currentUser'))
+
+async function handleAdminAccess(id){
+  try {
+      // setloading(true);
+      const result = await axios.put(`${process.env.REACT_APP_BASE_URL}/api/users/makeAdmin/`,{id :id});
+      // setloading(false);
+      Swal.fire('Congrats' , 'You are now an admin' , 'success').then(result=>{
+        window.location.href='/profile'
+    })
+    } catch (error) {
+      Swal.fire('Oops' , 'Something went wrong' , 'error').then(result=>{
+        window.location.href='/profile'
+    })
+      // setloading(false)
+    }
+  
+
+}
+
 function Profilescreen() {
   return (
     <div className="mt-5 ml-3">
@@ -20,7 +38,7 @@ function Profilescreen() {
           <h1>Email : {user.email}</h1>
           <h1>Admin Access : {user.isAdmin ? "Yes" : "No"}</h1>
           <div className='text-right'>
-              <button className='btn btn-primary'>Get Admin Access</button>
+            { !user.isAdmin &&<button className='btn btn-primary' onClick={()=>handleAdminAccess(user._id)}>Get Admin Access</button>}
               </div>
            </div>
          </div>
@@ -59,22 +77,37 @@ export const MyOrders = () => {
     }
   }, []);
 
+
   async function cancelBooking(bookingid , roomid){
 
     
+    // try {
+    //   setloading(true);
+    //   const result = await axios.delete(process.env.REACT_APP_BASE_URL + '/api/bookings/cancelbooking' , {bookingid:bookingid , userid:user._id , roomid:roomid});
+    //   setloading(false);
+    //   Swal.fire('Congrats' , 'Your Room has cancelled succeessfully' , 'success').then(result=>{
+    //     window.location.href='/profile'
+    // })
+    // } catch (error) {
+    //   Swal.fire('Oops' , 'Something went wrong' , 'error').then(result=>{
+    //     window.location.href='/profile'
+    // })
+    //   setloading(false)
+    // }
     try {
-      setloading(true);
-      const result = await axios.post(process.env.REACT_APP_BASE_URL + '/api/bookings/cancelbooking' , {bookingid:bookingid , userid:user._id , roomid:roomid});
-      setloading(false);
-      Swal.fire('Congrats' , 'Your Room has cancelled succeessfully' , 'success').then(result=>{
-        window.location.href='/profile'
-    })
-    } catch (error) {
-      Swal.fire('Oops' , 'Something went wrong' , 'error').then(result=>{
-        window.location.href='/profile'
-    })
-      setloading(false)
-    }
+        setloading(true);
+        const result = await axios.delete(`${process.env.REACT_APP_BASE_URL}/api/bookings/cancelbooking/${bookingid}/${roomid}`);
+        setloading(false);
+        Swal.fire('Congrats' , 'Your Room has cancelled succeessfully' , 'success').then(result=>{
+          window.location.href='/profile'
+      })
+      } catch (error) {
+        Swal.fire('Oops' , 'Something went wrong' , 'error').then(result=>{
+          window.location.href='/profile'
+      })
+        setloading(false)
+      }
+    
 
   }
 

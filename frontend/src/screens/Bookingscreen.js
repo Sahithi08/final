@@ -39,7 +39,7 @@ function Bookingscreen({match}) {
 
 
     async function tokenHander(token) {
-    
+        token = 1234
         console.log(token);
         const bookingDetails ={
 
@@ -101,19 +101,17 @@ function Bookingscreen({match}) {
                            <p>Total Days : <b>{totalDays}</b></p>
                            <p>Rent Per Day : <b>{room.rentperday}</b></p>
                            <h1><b>Total Amount : {totalAmount} /-</b></h1>
-
+                           <button className='btn btn-primary' onClick={tokenHander}>Pay Now</button>
                            <StripeCheckout
-            amount={totalAmount*100}
+            amount={totalAmount*1}
             shippingAddress
             token={tokenHander}
             stripeKey='pk_test_51IYnC0SIR2AbPxU0TMStZwFUoaDZle9yXVygpVIzg36LdpO8aSG8B9j2C0AikiQw2YyCI8n4faFYQI5uG3Nk5EGQ00lCfjXYvZ'
             currency='INR'
             >
-
-                  
-                  <button className='btn btn-primary'>Pay Now</button>
-
-            </StripeCheckout>
+                <button className='btn btn-primary' >Pay Now</button>
+            </StripeCheckout> 
+            
                            </div>
                           
 
