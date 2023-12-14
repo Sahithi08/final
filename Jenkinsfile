@@ -11,16 +11,16 @@ pipeline{
                 git 'https://github.com/Sahithi08/final.git'
             }
         }
-        stage('Testing'){
-            steps{
-                dir('frontend'){
-                    sh "npm install"
-                }
-                dir('backend'){
-                    sh "npm install"
-                }
-            }
-        }
+        // stage('Testing'){
+        //     steps{
+        //         dir('frontend'){
+        //             sh "npm install"
+        //         }
+        //         dir('backend'){
+        //             sh "npm install"
+        //         }
+        //     }
+        // }
         // stage('Testing'){
         //     steps{
         //         dir('frontend'){
