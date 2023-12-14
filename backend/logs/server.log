@@ -24,3 +24,9 @@ info: [Success] Retrieved all rooms successfully {"timestamp":"2023-12-13T23:17:
 info: [Success] Retrieved room by ID successfully - Room ID: 64ff0da07dfd7285a698b691 {"timestamp":"2023-12-13T23:17:36.141Z"}
 info: [Success] Retrieved all rooms successfully {"timestamp":"2023-12-13T23:17:44.087Z"}
 
+error: [Failure] User login failed - Invalid credentials {"timestamp":"2023-12-14T04:53:44.003Z"}
+info: [Success] User login successful - Name: 1, Email: 1 {"timestamp":"2023-12-14T04:53:44.439Z"}
+error: [Failure] User login failed - Invalid credentials {"timestamp":"2023-12-14T04:55:11.060Z"}
+info: [Success] User login successful - Name: 1, Email: 1 {"timestamp":"2023-12-14T04:55:11.676Z"}
+error: [Failure] User login failed - Invalid credentials {"timestamp":"2023-12-14T04:55:42.283Z"}
+error: [Failure] User login failed - Invalid credentials {"timestamp":"2023-12-14T04:55:42.752Z"}
