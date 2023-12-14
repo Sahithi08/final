@@ -8,7 +8,17 @@ pipeline{
     stages{
         stage('Clone Git'){
             steps{
-                git url : 'https://github.com/Sahithi08/final.git' ,branch: 'test1'
+                git 'https://github.com/Sahithi08/final.git'
+            }
+        }
+        stage('Testing'){
+            steps{
+                dir('frontend'){
+                    sh "npm install"
+                }
+                dir('backend'){
+                    sh "npm install"
+                }
             }
         }
         // stage('Testing'){

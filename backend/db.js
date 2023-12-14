@@ -1,8 +1,8 @@
 const mongoose = require("mongoose");
 
-var mongoDBURL = 'mongodb+srv://vishnutha03:1234@cluster0.bzighwq.mongodb.net'
+// var mongoDBURL = 'mongodb+srv://vishnutha03:1234@cluster0.bzighwq.mongodb.net'
 
-mongoose.connect(mongoDBURL , {useUnifiedTopology:true , useNewUrlParser:true})
+mongoose.connect("mongodb://mongodb_db:27016/mydatabase" , {useUnifiedTopology: true , useNewUrlParser: true})
 
 var dbconnect = mongoose.connection
 
