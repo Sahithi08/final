@@ -41,18 +41,18 @@ pipeline{
                 sh 'docker build -t backend-image ./backend'
             }
         }
-        stage('Push Images to DockerHub') {
-            steps {
+        // stage('Push Images to DockerHub') {
+        //     steps {
 
-                 withCredentials([usernamePassword(credentialsId: 'DockerHubCred', usernameVariable: 'DOCKER_HUB_USERNAME', passwordVariable: 'DOCKER_HUB_PASSWORD')]) {
-                    sh "docker login -u $DOCKER_HUB_USERNAME -p $DOCKER_HUB_PASSWORD"
-                    sh 'docker tag frontend-image sahithi008/frontend-image:latest'
-                    sh 'docker push sahithi008/frontend-image:latest'
-                    sh 'docker tag backend-image sahithi008/backend-image:latest'
-                    sh 'docker push sahithi008/backend-image:latest'
-                }        
-            }
-        }
+        //          withCredentials([usernamePassword(credentialsId: 'DockerHubCred', usernameVariable: 'DOCKER_HUB_USERNAME', passwordVariable: 'DOCKER_HUB_PASSWORD')]) {
+        //             sh "docker login -u $DOCKER_HUB_USERNAME -p $DOCKER_HUB_PASSWORD"
+        //             sh 'docker tag frontend-image sahithi008/frontend-image:latest'
+        //             sh 'docker push sahithi008/frontend-image:latest'
+        //             sh 'docker tag backend-image sahithi008/backend-image:latest'
+        //             sh 'docker push sahithi008/backend-image:latest'
+        //         }        
+        //     }
+        // }
         stage('Clean docker images'){
             steps{
                 script{
