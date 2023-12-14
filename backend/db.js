@@ -3,7 +3,7 @@ const mongoose = require("mongoose");
 // var mongoDBURL = 'mongodb+srv://vishnutha03:1234@cluster0.bzighwq.mongodb.net'
 
 mongoose.connect(process.env.MONGO_URL , {useUnifiedTopology: true , useNewUrlParser: true})
-
+console.log(process.env.MONGO_URL)
 var dbconnect = mongoose.connection
 
 dbconnect.on('error' , ()=>{
