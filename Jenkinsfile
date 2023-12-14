@@ -1,7 +1,7 @@
 pipeline{
     agent any
     environment{
-        MONGO="mongodb+srv://chakrivanarasi:123@cluster0.vbhdsq1.mongodb.net/"
+        MONGO="mongodb+srv://vishnutha03:1234@cluster0.bzighwq.mongodb.net"
         JWT="eef5f9245c142460c20d70063583558d30f02e88455ee91a9e9d19bd49fb9baf49787e5bd2502529fcdb0d1fe8d287e4cc56ff53bf2bde139237656368224d83"
         DOCKER_HUB_CRED = credentials('DockerHubCred')
     }
