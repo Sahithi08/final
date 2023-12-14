@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 
 // var mongoDBURL = 'mongodb+srv://vishnutha03:1234@cluster0.bzighwq.mongodb.net'
 
-mongoose.connect("mongodb://mongodb_db:27016/mydatabase" , {useUnifiedTopology: true , useNewUrlParser: true})
+mongoose.connect(process.env.MONGO_URL , {useUnifiedTopology: true , useNewUrlParser: true})
 
 var dbconnect = mongoose.connection
 
