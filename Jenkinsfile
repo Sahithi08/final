@@ -8,7 +8,7 @@ pipeline{
     stages{
         stage('Clone Git'){
             steps{
-                git 'https://github.com/Sahithi08/rooms.git'
+                git 'https://github.com/Sahithi08/final.git'
             }
         }
         stage('Testing'){
