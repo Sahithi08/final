@@ -8,7 +8,6 @@ pipeline{
     stages{
         stage('Clone Git'){
             steps{
-                git branch: 'images',
                 git 'https://github.com/Sahithi08/final.git'
             }
         }
