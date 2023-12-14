@@ -8,7 +8,8 @@ pipeline{
     stages{
         stage('Clone Git'){
             steps{
-                git 'https://github.com/Sahithi08/final.git'
+
+                git branch : 'test1' url :'https://github.com/Sahithi08/final.git'
             }
         }
         // stage('Testing'){
