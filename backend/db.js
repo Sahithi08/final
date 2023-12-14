@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 
 var mongoDBURL = 'mongodb+srv://sathya:sathyapr@cluster0.wrqpt.mongodb.net/sheyrooms'
 
-mongoose.connect(mongoDBURL , {useUnifiedTopology:true , useNewUrlParser:true})
+mongoose.connect(process.env.MONGO_URL , {useUnifiedTopology: true , useNewUrlParser: true})
 
 var dbconnect = mongoose.connection
 
