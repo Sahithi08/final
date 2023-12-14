@@ -147,3 +147,11 @@ info: [Success] User login successful - Name: name, Email: name@example.com {"ti
 info: [Success] Retrieved all rooms successfully {"timestamp":"2023-12-14T05:27:07.956Z"}
 info: [Success] User login successful - Name: name, Email: name@example.com {"timestamp":"2023-12-14T05:27:21.607Z"}
 info: [Success] This user is now an admin 657a921de6214cbfa3aa049c {"timestamp":"2023-12-14T05:27:27.862Z"}
+info: [Success] Retrieved all rooms successfully {"timestamp":"2023-12-14T06:20:53.231Z"}
+info: [Success] Retrieved all rooms successfully {"timestamp":"2023-12-14T06:24:08.466Z"}
+info: [Success] Retrieved all bookings successfully {"timestamp":"2023-12-14T06:24:12.982Z"}
+info: [Success] Retrieved all rooms successfully {"timestamp":"2023-12-14T06:24:15.044Z"}
+info: [Success] New room added successfully - Room Name: Louis bangalore resort {"timestamp":"2023-12-14T06:25:39.340Z"}
+info: [Success] New room added successfully - Room Name: Louis bangalore resort {"timestamp":"2023-12-14T06:25:42.991Z"}
+info: [Success] Retrieved all rooms successfully {"timestamp":"2023-12-14T06:25:59.080Z"}
+info: [Success] Retrieved all rooms successfully {"timestamp":"2023-12-14T06:26:26.009Z"}
